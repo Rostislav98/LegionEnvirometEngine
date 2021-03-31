@@ -5,6 +5,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#include "ShaderManager.h"
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
 
@@ -51,6 +53,10 @@ int main()
 	GLFWwindow* window = CreateWindow();
 
 	LoadGLADLibrary();
+
+	LEE::ShaderManager ShaderManager;
+
+	ShaderManager.LoadShadersToMemory();
 
 
 	while (!glfwWindowShouldClose(window))
